@@ -24,47 +24,62 @@ namespace Tech_Proj_3B
             int startInteger = 1;
 
 
-            // This specific configuraiton sets the size of the array.
-            // The array will be populated with integers that start from "startInteger" and continue till the required number of values in fullfiled.
+            // This specific configuration sets the size of the array.
+            // The array will be populated with integers that start from "startInteger" and continue till the required number of values in fulfilled.
             int arraySize = 25;
 
-            // Try catch is used incase any errors occur during the execution. This shouldn't be a major issue due to there being no user input.
+            // Try catch is used in case any errors occur during the execution. This should not be a major issue due to there being no user input.
             try
             {
                 /*
-                Providing the "PopulateArray" with the preiovusly specified "arraySize" and "startInteger". The output of the method is then given to the "PrintOutput" method.
+                Providing the "PopulateArray" with the previously specified "arraySize" and "startInteger". The output of the method is then given to the "PrintOutput" method.
                 */
                 PrintOutput(PopulateArray(arraySize, startInteger));
                 // Waiting for user acknowledgement before exiting
                 Console.ReadKey(true);
             }
 
+            // Catch will trigger if any errors occur during execution on the try section
             catch
             {
-                Console.WriteLine("Error!");
+                // Prompting the user to reopen the application to try again
+                Console.WriteLine("An error has occured, please reopen the program to try again.");
+                Console.WriteLine("Press any key to continue...");
+                // Waiting for user input before closing
+                Console.ReadKey(true);
             }
         }
 
+        // Method used to populate the array. The array's desired size and the starting integer of the array is provided to the method.
         static int[] PopulateArray(int arraySize, int startInteger)
         {
+            // Initializing an integer array with the specified array size provided in the input
             int[] fullArray = new int[arraySize];
 
+            // Using "i" as a reference for the index of the array. Setting the index to 0 and incrementing up until the required array size is met.
             for (int i = 0; i < arraySize; i++)
             {
+                // Setting the array to the value of the startInteger variable.
                 fullArray[i] = startInteger;
+                // Incrementing the value of the startInteger so that it counts up. The start integer will increment instead of using another variable for this to save space.
                 startInteger++;
             }
 
+            // The method is going to return the array filled with the values using the specified requirements of starting integer and array size.
             return fullArray;
 
         }
 
+        // Method used to loop through the array indexes and print the values of each index.
         static void PrintOutput(int[] fullArray)
         {
+            // Using a foreach loop to increment through all of the indexes in the fullArray array. The index is specified with the variable i.
             foreach (int i in fullArray)
             {
+                // Printing the value held within each index.
                 Console.WriteLine("Element value = " + i.ToString());
             }
         }
     }
 }
+
