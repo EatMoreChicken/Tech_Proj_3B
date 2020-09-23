@@ -16,18 +16,24 @@ namespace Tech_Proj_3B
     {
         static void Main(string[] args)
         {
+            // Letting the user know that there is no need for user input for this program.
             Console.WriteLine("Hello World! No user input is needed here. Just sit back and relax!");
 
             // CONFIGURATIONS
-            // This specific configuraiton sets the size of the array.
             // This variable will determine what integer to start populating the array from. Default is 1.
             int startInteger = 1;
 
+
+            // This specific configuraiton sets the size of the array.
             // The array will be populated with integers that start from "startInteger" and continue till the required number of values in fullfiled.
             int arraySize = 25;
 
+            // Try catch is used incase any errors occur during the execution. This shouldn't be a major issue due to there being no user input.
             try
             {
+                /*
+                Providing the "PopulateArray" with the preiovusly specified "arraySize" and "startInteger". The output of the method is then given to the "PrintOutput" method.
+                */
                 PrintOutput(PopulateArray(arraySize, startInteger));
                 // Waiting for user acknowledgement before exiting
                 Console.ReadKey(true);
